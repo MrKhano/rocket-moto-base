@@ -1,0 +1,7 @@
+{
+  "name": "rocket-moto-mini-app",
+  "version": "1.0.0",
+  "description": "Mini app Rocket Mechanic Moto",
+  "main": "src/index.js",
+  "type": "module"
+}
