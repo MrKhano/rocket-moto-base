@@ -1,56 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { initContract, getContract } from "./contract";
+import React, { useEffect } from "react";
+import { sdk } from "@farcaster/minisdk";
 
 function App() {
-  const [status, setStatus] = useState("");
-
-  // Initialisation du contrat au chargement
   useEffect(() => {
-    async function load() {
-      await initContract();
-      const s = await getContract().getMotoStatus();
-      setStatus(s);
-    }
-    load();
+    // Attendre que le SDK soit prêt
+    sdk.actions.ready().then(() => {
+      console.log("✅ SDK Base Mini App ready!");
+
+      // Exemple : lire l'adresse connectée si le wallet est déjà connecté
+      const account = sdk.getUserAccount?.();
+      console.log("Wallet connecté :", account);
+    }).catch((err) => {
+      console.error("⚠️ Erreur SDK :", err);
+    });
   }, []);
 
-  // Fonctions pour interagir avec le contrat
-  const addFuel = async () => {
-    const tx = await getContract().addFuel();
-    await tx.wait();
-    const s = await getContract().getMotoStatus();
-    setStatus(s);
-  };
-
-  const changeEngine = async () => {
-    const tx = await getContract().changeEngine("Turbo");
-    await tx.wait();
-    const s = await getContract().getMotoStatus();
-    setStatus(s);
-  };
-
-  const installTrumpMode = async () => {
-    const tx = await getContract().installTrumpMode();
-    await tx.wait();
-    const s = await getContract().getMotoStatus();
-    setStatus(s);
-  };
-
-  const upgradeEngine = async () => {
-    const tx = await getContract().upgradeEngine();
-    await tx.wait();
-    const s = await getContract().getMotoStatus();
-    setStatus(s);
-  };
-
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Rocket Mechanic Moto</h1>
-      <p>Status: {status}</p>
-      <button onClick={addFuel}>Add Fuel</button>
-      <button onClick={changeEngine}>Change Engine</button>
-      <button onClick={installTrumpMode}>Install Trump Mode</button>
-      <button onClick={upgradeEngine}>Upgrade Engine</button>
+    <div>
+      <h1>RocketMechanic Mini App</h1>
+      <button
+        onClick={async () => {
+          try {
+            // Demande de connexion wallet Base
+            const account = await sdk.actions.connectWallet();
+            console.log("Wallet connecté :", account);
+          } catch (err) {
+            console.error("Connexion wallet échouée :", err);
+          }
+        }}
+      >
+        Connecter mon wallet Base
+      </button>
     </div>
   );
 }
