@@ -19,7 +19,7 @@
     "signature": "zO8XT34wpTgIUTqeB/6wrdoD1UnjOmWG1DFOdBRlRCBsa8Tf1kHZ8RSb8kguluG2C9Q6rcdjvODMEfbvJCmC5Bw="
   },
   "baseBuilder": {
-    "allowedAddresses": [
+    "ownerAddress": [
       "0x6Ecaf0E5fbA21Ee26A8Bb7a43dadd3563c246b49"
     ]
   },
