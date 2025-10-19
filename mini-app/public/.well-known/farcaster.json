@@ -22,5 +22,11 @@
     "allowedAddresses": [
       "0x6Ecaf0E5fbA21Ee26A8Bb7a43dadd3563c246b49"
     ]
+  },
+  "metadata": {
+    "category": "game",
+    "tags": ["moto", "trump", "mechanic"],
+    "version": "1.0.0",
+    "author": "Khano"
   }
 }
