@@ -21,5 +21,8 @@
     "typescript": "~5.8.0",
     "viem": "^2.38.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@farcaster/miniapp-sdk": "^0.2.1"
+  }
 }
