@@ -1,28 +1,18 @@
 {
   "name": "rocket-moto-base",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^4.0.2",
-    "@nomicfoundation/hardhat-ignition": "^3.0.3",
-    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
-    "@types/node": "^22.18.11",
-    "dotenv": "^17.2.3",
-    "ethers": "^6.15.0",
-    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
-    "hardhat": "^3.0.7",
-    "typescript": "~5.8.0",
-    "viem": "^2.38.3"
-  },
   "type": "module",
+  "scripts": {
+    "build": "cd mini-app && npm install && npm run build",
+    "dev": "cd mini-app && npm install && npm run dev"
+  },
   "dependencies": {
     "@farcaster/miniapp-sdk": "^0.2.1"
+  },
+  "devDependencies": {
+    "hardhat": "^3.0.7",
+    "ethers": "^6.15.0",
+    "typescript": "~5.8.0",
+    "@types/node": "^22.18.11"
   }
 }

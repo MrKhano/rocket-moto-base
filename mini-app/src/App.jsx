@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { sdk } from "@farcaster/minisdk";
+import { sdk } from "@farcaster/miniapp-sdk";
 
 function App() {
   useEffect(() => {
