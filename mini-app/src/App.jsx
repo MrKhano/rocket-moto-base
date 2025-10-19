@@ -3,34 +3,30 @@ import { sdk } from "@farcaster/minisdk";
 
 function App() {
   useEffect(() => {
-    // Vérifier que le SDK est prêt
-    sdk.actions.ready()
-      .then(() => {
-        console.log("✅ SDK Base Mini App ready!");
-      })
-      .catch((err) => {
-        console.error("⚠️ SDK init error:", err);
-      });
+    // Attendre que le SDK soit prêt
+    sdk.actions.ready().then(() => {
+      console.log("✅ SDK Base Mini App ready!");
+
+      // Exemple : lire l'adresse connectée si le wallet est déjà connecté
+      const account = sdk.getUserAccount?.();
+      console.log("Wallet connecté :", account);
+    }).catch((err) => {
+      console.error("⚠️ Erreur SDK :", err);
+    });
   }, []);
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
+    <div>
       <h1>RocketMechanic Mini App</h1>
-      <p>Bienvenue dans ta Mini App Base 🚀</p>
       <button
         onClick={async () => {
           try {
+            // Demande de connexion wallet Base
             const account = await sdk.actions.connectWallet();
             console.log("Wallet connecté :", account);
           } catch (err) {
             console.error("Connexion wallet échouée :", err);
           }
-        }}
-        style={{
-          padding: "1rem 2rem",
-          marginTop: "1rem",
-          fontSize: "1rem",
-          cursor: "pointer"
         }}
       >
         Connecter mon wallet Base
