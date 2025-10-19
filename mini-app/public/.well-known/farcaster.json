@@ -12,5 +12,10 @@
   ],
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "accountAssociation": {
+    "header": "eyJmaWQiOjkyNTQ5NCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweERhNDdjYmU0MTEwNjk4NTk5ODJENjRBNUY1YkQ4OUYzNjFmQ0UyOTIifQ",
+    "payload": "eyJkb21haW4iOiJyb2NrZXQtbW90by1iYXNlLnZlcmNlbC5hcHAifQ",
+    "signature": "zO8XT34wpTgIUTqeB/6wrdoD1UnjOmWG1DFOdBRlRCBsa8Tf1kHZ8RSb8kguluG2C9Q6rcdjvODMEfbvJCmC5Bw="
+  }
 }
